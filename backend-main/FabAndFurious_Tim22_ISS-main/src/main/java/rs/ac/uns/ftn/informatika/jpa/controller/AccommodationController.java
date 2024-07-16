@@ -68,6 +68,16 @@ public class AccommodationController {
         return ResponseEntity.ok(updatedAccommodation);
     }
 
+    @GetMapping("/filter")
+    public ResponseEntity<List<Accommodation>> getFilteredAccommodations(
+            @RequestParam(required = false) String location,
+            @RequestParam(required = false, defaultValue = "2") int numberOfGuests,
+            @RequestParam() String startDate,
+            @RequestParam() String endDate) {
+
+        List<Accommodation> accommodations = accommodationService.getFilteredAccommodations(location, numberOfGuests, startDate, endDate);
+        return ResponseEntity.ok(accommodations);
+    }
 
     @GetMapping
     public ResponseEntity<List<Accommodation>> getAllAccommodations() {

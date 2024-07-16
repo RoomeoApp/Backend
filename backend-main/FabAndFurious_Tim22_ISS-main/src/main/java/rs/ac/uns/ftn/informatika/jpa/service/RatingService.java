@@ -34,7 +34,30 @@ public class RatingService implements IRatingService {
 
     @Override
     public Rating saveRating(Rating rating) {
-        return ratingRepository.save(rating);
+        ratingRepository.save(rating);
+
+        Accommodation accommodation = accommodationRepository.findById((long) rating.getAccommodationId()).orElseThrow(() -> new PropertyNotFoundException("Accommodation with ID " + rating.getAccommodationId() + " not found."));
+
+        int counter=0;
+        double average = 0;
+
+        for (Rating r : ratingRepository.findAll()){
+            if (r.getAccommodationId() == accommodation.getId().intValue()){
+                counter++;
+                average += r.getRating();
+
+                System.out.println("r: " + r.getRating());
+            }
+        }
+        double final_rate = average / counter;
+        final_rate = Double.parseDouble(String.format("%.1f", final_rate));
+        accommodation.setRate(final_rate);
+
+        accommodationRepository.save(accommodation);
+
+        System.out.println("acc" + accommodation);
+
+        return rating;
     }
 
     @Override

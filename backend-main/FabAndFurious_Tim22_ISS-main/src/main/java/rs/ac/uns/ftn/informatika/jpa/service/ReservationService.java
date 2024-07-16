@@ -2,14 +2,13 @@ package rs.ac.uns.ftn.informatika.jpa.service;
 
 import org.springframework.stereotype.Service;
 import rs.ac.uns.ftn.informatika.jpa.model.Accommodation;
-import rs.ac.uns.ftn.informatika.jpa.model.Report;
 import rs.ac.uns.ftn.informatika.jpa.model.Reservation;
+import rs.ac.uns.ftn.informatika.jpa.model.enums.ReservationRequestStatus;
 import rs.ac.uns.ftn.informatika.jpa.repository.AccommodationRepository;
-import rs.ac.uns.ftn.informatika.jpa.repository.ReportRepository;
 import rs.ac.uns.ftn.informatika.jpa.repository.ReservationRepository;
-import rs.ac.uns.ftn.informatika.jpa.service.interfaces.IReportService;
 import rs.ac.uns.ftn.informatika.jpa.service.interfaces.IReservationService;
 
+import javax.el.PropertyNotFoundException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +67,24 @@ public class ReservationService implements IReservationService {
         }
     }
     return hostReservations;
+    }
+
+    @Override
+    public Reservation acceptReservationRequest(Long id) {
+        Reservation reservation = reservationRepository.findById(id).orElseThrow(() -> new PropertyNotFoundException("Reservation with ID " + id + " not found."));
+
+        reservation.setStatus(ReservationRequestStatus.ACCEPTED);
+
+        return reservationRepository.save(reservation);
+    }
+
+    @Override
+    public Reservation rejectReservationRequest(Long id) {
+        Reservation reservation = reservationRepository.findById(id).orElseThrow(() -> new PropertyNotFoundException("Reservation with ID " + id + " not found."));
+
+        reservation.setStatus(ReservationRequestStatus.REJECTED);
+
+        return reservationRepository.save(reservation);
     }
 
     @Override

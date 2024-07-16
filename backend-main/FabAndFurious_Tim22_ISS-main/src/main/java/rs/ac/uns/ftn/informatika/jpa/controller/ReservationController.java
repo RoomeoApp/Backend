@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.ac.uns.ftn.informatika.jpa.model.Accommodation;
-import rs.ac.uns.ftn.informatika.jpa.model.Report;
-import rs.ac.uns.ftn.informatika.jpa.model.ReportItem;
-import rs.ac.uns.ftn.informatika.jpa.model.Reservation;
+import rs.ac.uns.ftn.informatika.jpa.model.*;
 import rs.ac.uns.ftn.informatika.jpa.model.enums.ReservationRequestStatus;
 import rs.ac.uns.ftn.informatika.jpa.service.interfaces.IAccommodationService;
 import rs.ac.uns.ftn.informatika.jpa.service.interfaces.IReportService;
@@ -72,6 +69,25 @@ public class ReservationController {
 
         List<Reservation> reservations = reservationService.findByHostId(Long.valueOf(hostId));
         return ResponseEntity.ok(reservations);
+    }
+
+
+    @PutMapping("/accept/{id}")
+    public ResponseEntity<Reservation> acceptReservationRequest(
+            @PathVariable("id") Long id) {
+
+        Reservation updatedReservation = reservationService.acceptReservationRequest(id);
+
+        return ResponseEntity.ok(updatedReservation);
+    }
+
+    @PutMapping("/decline/{id}")
+    public ResponseEntity<Reservation> declineReservationRequest(
+            @PathVariable("id") Long id) {
+
+        Reservation updatedReservation = reservationService.rejectReservationRequest(id);
+
+        return ResponseEntity.ok(updatedReservation);
     }
 
     @GetMapping("/accommodationReservations/{accommodationId}")

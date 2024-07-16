@@ -14,5 +14,10 @@ public interface IReservationService {
     Optional<Reservation> getReservation(String id);
     List<Reservation> findByGuestId(Long guestId);
     List<Reservation> findByHostId(Long hostId);
+
+    Reservation acceptReservationRequest(Long id);
+
+    Reservation rejectReservationRequest(Long id);
+
     List<Reservation> findByAccommodationId(Long accommodationId);
 }

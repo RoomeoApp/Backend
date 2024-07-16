@@ -16,15 +16,15 @@ public class Rating {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private int rating;
-    private String comment;
-    private RatingStatus status;
-    private RatingType type;
+    private double rating;
+    private String comment; //
+    private RatingStatus status; //
+    private RatingType type; //
     private int accommodationId;
-    private int guestId;
-    private String ratingDate;
+    private int guestId; //
+    private String ratingDate; //
 
-    public Rating(int rating, String comment, RatingStatus status, RatingType type, int accommodationId, int guestId, String ratingDate) {
+    public Rating(double rating, String comment, RatingStatus status, RatingType type, int accommodationId, int guestId, String ratingDate) {
         this.rating = rating;
         this.comment = comment;
         this.status = status;
@@ -32,5 +32,11 @@ public class Rating {
         this.accommodationId = accommodationId;
         this.guestId = guestId;
         this.ratingDate = ratingDate;
+    }
+
+    public Rating(double rating, RatingStatus status, int accommodationId) {
+        this.rating = rating;
+        this.status = status;
+        this.accommodationId = accommodationId;
     }
 }

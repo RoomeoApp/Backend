@@ -17,6 +17,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AccommodationService implements IAccommodationService {
@@ -130,6 +131,17 @@ public class AccommodationService implements IAccommodationService {
                 .orElseThrow(() -> new EntityNotFoundException("Accommodation with ID " + id + " not found"));
 
         accommodationRepository.delete(existingAccommodation);
+    }
+
+    public List<Accommodation> getFilteredAccommodations(String location, int numberOfGuests, String startDate, String endDate) {
+        List<Accommodation> allAccommodations = getAll();
+
+        return allAccommodations.stream()
+                .filter(accommodation -> (location == null || location.isEmpty() || accommodation.getLocation().contains(location)) &&
+                        (numberOfGuests == 0 || (numberOfGuests >= accommodation.getMinGuest() && numberOfGuests <= accommodation.getMaxGuest())) &&
+                        (startDate == null || startDate.isEmpty() || accommodation.getAvailability().contains(startDate)) &&
+                        (endDate == null || endDate.isEmpty() || accommodation.getAvailability().contains(endDate)))
+                .collect(Collectors.toList());
     }
 
 }

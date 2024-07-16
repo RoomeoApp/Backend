@@ -1,12 +1,10 @@
 package rs.ac.uns.ftn.informatika.jpa.model;
 
 import lombok.*;
-import rs.ac.uns.ftn.informatika.jpa.model.enums.AccommodationRequestStatus;
-import rs.ac.uns.ftn.informatika.jpa.model.enums.AccommodationType;
-import rs.ac.uns.ftn.informatika.jpa.model.enums.BookingMethod;
-import rs.ac.uns.ftn.informatika.jpa.model.enums.Payment;
+import rs.ac.uns.ftn.informatika.jpa.model.enums.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +19,7 @@ public class Accommodation {
     private Long id;
 
     private String name;
+    private double rate;
     private String description;
     private String location;
     private AccommodationType type;
@@ -40,8 +39,10 @@ public class Accommodation {
     private int maxGuest;
     private AccommodationRequestStatus status;
     private Long hostId;
-    private int percentage_of_price_increase; // uvecanje cene npr vikendom
-    private int cancellationDeadline; // broj dana pre pocetka rezervacije
+    private int percentage_of_price_increase;
+    private int cancellationDeadline;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<EcoFriendlyAmenity> ecoFriendlyAmenities = new ArrayList<>();
 
     public Accommodation(Long id, String name, String description, String location, AccommodationType type, boolean wifi, boolean kitchen, boolean airConditioner, boolean parking, List<String> availability, Payment payment, int price, BookingMethod bookingMethod, List<Rating> ratings, String photos, int minGuest, int maxGuest, AccommodationRequestStatus status, Long hostId, int percentage_of_price_increase, int cancellationDeadline) {
         this.id = id;
