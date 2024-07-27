@@ -2,6 +2,7 @@ package rs.ac.uns.ftn.informatika.jpa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import rs.ac.uns.ftn.informatika.jpa.model.Guest;
 import rs.ac.uns.ftn.informatika.jpa.model.Host;
 import rs.ac.uns.ftn.informatika.jpa.repository.HostRepository;
 import rs.ac.uns.ftn.informatika.jpa.service.interfaces.IHostService;
@@ -30,5 +31,20 @@ public class HostService implements IHostService {
 
     public void add(Host host) {
         this.hostRepository.save(host);
+    }
+
+    public Host updateHost(Long id, Host updatedGuest) {
+        Optional<Host> existingGuestOpt = hostRepository.findById(id);
+        if (existingGuestOpt.isPresent()) {
+            Host existingGuest = existingGuestOpt.get();
+            existingGuest.setFirstName(updatedGuest.getFirstName());
+            existingGuest.setLastName(updatedGuest.getLastName());
+            existingGuest.setEmail(updatedGuest.getEmail());
+            existingGuest.setPhoneNumber(updatedGuest.getPhoneNumber());
+            existingGuest.setAddress(updatedGuest.getAddress());
+
+            return hostRepository.save(existingGuest);
+        }
+        return updatedGuest;
     }
 }

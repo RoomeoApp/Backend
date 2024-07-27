@@ -31,4 +31,19 @@ public class GuestService  implements IGuestService {
     public void add(Guest guest) {
         this.guestRepository.save(guest);
     }
+
+    public Guest updateGuest(Long id, Guest updatedGuest) {
+        Optional<Guest> existingGuestOpt = guestRepository.findById(id);
+        if (existingGuestOpt.isPresent()) {
+            Guest existingGuest = existingGuestOpt.get();
+            existingGuest.setFirstName(updatedGuest.getFirstName());
+            existingGuest.setLastName(updatedGuest.getLastName());
+            existingGuest.setEmail(updatedGuest.getEmail());
+            existingGuest.setPhoneNumber(updatedGuest.getPhoneNumber());
+            existingGuest.setAddress(updatedGuest.getAddress());
+
+            return guestRepository.save(existingGuest);
+        }
+        return updatedGuest;
+    }
 }

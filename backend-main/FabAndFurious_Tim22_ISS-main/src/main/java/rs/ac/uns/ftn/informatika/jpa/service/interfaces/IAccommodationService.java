@@ -27,4 +27,6 @@ public interface IAccommodationService {
     void deleteAccommodation(Long id);
 
     List<Accommodation> getFilteredAccommodations(String location, int numberOfGuests, String startDate, String endDate);
+
+    Accommodation updateAccommodation(Long id, Accommodation accommodation);
 }

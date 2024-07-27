@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.ftn.informatika.jpa.dto.request.*;
+import rs.ac.uns.ftn.informatika.jpa.model.Guest;
 import rs.ac.uns.ftn.informatika.jpa.model.Rating;
 import rs.ac.uns.ftn.informatika.jpa.model.enums.Role;
 import rs.ac.uns.ftn.informatika.jpa.model.Host;
@@ -49,22 +50,14 @@ public class HostController {
 
         return ResponseEntity.ok(host);
     }
-//    @GetMapping(value = "averageRate/{hostId}")
-//    public ResponseEntity<Double> getHostAverageRate(@PathVariable("hostId") String id) {
-//
-//        double average;
-//        int rateNum = 0;
-//        int rates = 0;
-//        List<Rating> ratingList = this.ratingService.getAllHostRatings(Long.parseLong(id));
-//        for (Rating r:ratingList){
-//            rateNum++;
-//            rates = rates + r.getRating();
-//        }
-//        average = rates/rateNum;
-//        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-//        String formattedAverage = decimalFormat.format(average);
-//        double formattedDouble = Double.parseDouble(formattedAverage);
-//
-//        return ResponseEntity.ok(formattedDouble);
-//    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Host> updateHost(@PathVariable Long id, @RequestBody Host updatedGuest) {
+        try {
+            Host host = hostService.updateHost(id, updatedGuest);
+            return ResponseEntity.ok(host);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 }

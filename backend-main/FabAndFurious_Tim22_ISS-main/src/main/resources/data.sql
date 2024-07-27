@@ -1,6 +1,6 @@
 --admin
 --pass: admin123
-insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ('Bulevar oslobodjenja 12 Novi Sad', false, 'admin@gmail.com', 'Admin', 'Admin','$2a$10$SNwqKTpejKgVD9kMunSvYuVPgF/rs9oq5TEkWMwRUb75hb2CVMUa6', '0664587545', 'picture', 'ADMIN')
+insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ('Bulevar oslobodjenja 12, Novi Sad', false, 'admin@gmail.com', 'Admin', 'Admin','$2a$10$SNwqKTpejKgVD9kMunSvYuVPgF/rs9oq5TEkWMwRUb75hb2CVMUa6', '0664587545', 'picture', 'ADMIN')
 insert into ADMINS(id) values (1)
 
 --guests
@@ -10,19 +10,19 @@ insert into GUEST(id) values (2)
 insert into GUEST_FAVORITE_ACCOMMODATIONS(guest_id, favorite_accommodations) values (2,1)
 insert into GUEST_FAVORITE_ACCOMMODATIONS(guest_id, favorite_accommodations) values (2,2)
 
---pass: petar123
-insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ( 'Bulevar oslobodjenja 2, Novi Sad', false, 'petar.petrovic@gmail.com', 'Petar', 'Petrovic', '$2a$10$cQnYiXJL0XHGoX27SCRLjOhoHRzKWlzkNP5sEXjStrFdtjAntCHH6', '066874521', 'picture', 'GUEST')
-insert into GUEST(id) values (3)
+-- --pass: petar123
+-- insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ( 'Bulevar oslobodjenja 2, Novi Sad', false, 'petar.petrovic@gmail.com', 'Petar', 'Petrovic', '$2a$10$cQnYiXJL0XHGoX27SCRLjOhoHRzKWlzkNP5sEXjStrFdtjAntCHH6', '066874521', 'picture', 'GUEST')
+-- insert into GUEST(id) values (3)
 
 
 --hosts
 --pass: andrea123
-insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ( 'Bulevar oslobodjenja 78, Novi Sad', false, 'andrea.katzenberger@gmail.com', 'Andrea', 'Katzenberger', '$2a$10$PelwlV29qdhWztr21ChMBeYYQUkWMuJhJhYqLKBKQiTa7he8qaIN6', '0641254658', 'picture', 'HOST')
-insert into HOST(id) values (4)
+insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ( 'Bulevar oslobodjenja 78, Novi Sad', false, 'petar.petrovic@gmail.com', 'Petar', 'Petrovic', '$2a$10$PelwlV29qdhWztr21ChMBeYYQUkWMuJhJhYqLKBKQiTa7he8qaIN6', '0641254658', 'picture', 'HOST')
+insert into HOST(id) values (3)
 
 --pass: mirko123
 insert into USERS(address, blocked, email, first_name, last_name, password, phone_number, picture, role) values ( 'Bulevar oslobodjenja 7, Novi Sad', false, 'mirko.mirkovic@gmail.com', 'Mirko', 'Mirkovic', '$2a$10$bm0/QkZmhQEQVI8LwFV9QeescIjZjdJSHre/xK2lJw020xCHJxV0m', '0645879458', 'picture', 'HOST')
-insert into HOST(id) values (5)
+insert into GUEST(id) values (4)
 --
 
 --accommodations

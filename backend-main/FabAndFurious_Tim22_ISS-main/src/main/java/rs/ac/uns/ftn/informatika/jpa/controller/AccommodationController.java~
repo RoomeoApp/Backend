@@ -148,7 +148,7 @@ public class AccommodationController {
     public ResponseEntity<Accommodation> updateAccommodation(
             @PathVariable("id") String id,
             @RequestBody Accommodation accommodation) {
-        Accommodation updatedAccommodation = accommodationService.updateAccommodation(Long.valueOf(id), accommodation);
+        Accommodation updatedAccommodation = accommodationService.updateAccommodation(id, accommodation);
         return ResponseEntity.ok(updatedAccommodation);
     }
 }

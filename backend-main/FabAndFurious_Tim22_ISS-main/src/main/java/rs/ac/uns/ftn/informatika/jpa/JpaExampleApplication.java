@@ -42,60 +42,52 @@ public class JpaExampleApplication {
 	private void databaseInitialization() {
 
 		EcoFriendlyAmenity solarPanels = new EcoFriendlyAmenity(EcoAmenity.SolarPanels);
-		EcoFriendlyAmenity ledLighting = new EcoFriendlyAmenity(EcoAmenity.LEDLighting);
 		EcoFriendlyAmenity smartThermostats = new EcoFriendlyAmenity(EcoAmenity.SmartThermostats);
 		EcoFriendlyAmenity energyEfficientDevices = new EcoFriendlyAmenity(EcoAmenity.EnergyEfficientDevices);
-		EcoFriendlyAmenity windTurbines = new EcoFriendlyAmenity(EcoAmenity.WindTurbines);
-		EcoFriendlyAmenity geothermalEnergy = new EcoFriendlyAmenity(EcoAmenity.GeothermalEnergy);
-		EcoFriendlyAmenity hydropower = new EcoFriendlyAmenity(EcoAmenity.Hydropower);
 		EcoFriendlyAmenity zeroWastePolicy = new EcoFriendlyAmenity(EcoAmenity.ZeroWastePolicy);
 		EcoFriendlyAmenity recyclingBins = new EcoFriendlyAmenity(EcoAmenity.RecyclingBins);
-		EcoFriendlyAmenity compostingSystem = new EcoFriendlyAmenity(EcoAmenity.CompostingSystem);
 		EcoFriendlyAmenity limitedUseOfSingleUsePlastics = new EcoFriendlyAmenity(EcoAmenity.LimitedUseOfSingleUsePlastics);
 		EcoFriendlyAmenity waterSavingFaucetsShowersToilets = new EcoFriendlyAmenity(EcoAmenity.WaterSavingFaucetsShowersToilets);
-		EcoFriendlyAmenity rainwaterHarvestingSystem = new EcoFriendlyAmenity(EcoAmenity.RainwaterHarvestingSystem);
-		EcoFriendlyAmenity greywaterRecycling = new EcoFriendlyAmenity(EcoAmenity.GreywaterRecycling);
-		EcoFriendlyAmenity localMaterialConstruction = new EcoFriendlyAmenity(EcoAmenity.LocalMaterialConstruction);
-		EcoFriendlyAmenity useOfSustainableRecycledMaterials = new EcoFriendlyAmenity(EcoAmenity.UseOfSustainableRecycledMaterials);
 		EcoFriendlyAmenity naturalNonToxicMaterials = new EcoFriendlyAmenity(EcoAmenity.NaturalNonToxicMaterials);
 		EcoFriendlyAmenity greenSpacesAndGardens = new EcoFriendlyAmenity(EcoAmenity.GreenSpacesAndGardens);
-		EcoFriendlyAmenity supportForLocalFloraAndFauna = new EcoFriendlyAmenity(EcoAmenity.SupportForLocalFloraAndFauna);
-		EcoFriendlyAmenity preservationOfNaturalHabitats = new EcoFriendlyAmenity(EcoAmenity.PreservationOfNaturalHabitats);
 		EcoFriendlyAmenity freeBicyclesForGuests = new EcoFriendlyAmenity(EcoAmenity.FreeBicyclesForGuests);
 		EcoFriendlyAmenity electricVehicleChargers = new EcoFriendlyAmenity(EcoAmenity.ElectricVehicleChargers);
-		EcoFriendlyAmenity publicTransportInformationAndFreeTickets = new EcoFriendlyAmenity(EcoAmenity.PublicTransportInformationAndFreeTickets);
-		EcoFriendlyAmenity organicProductsInRestaurants = new EcoFriendlyAmenity(EcoAmenity.OrganicProductsInRestaurants);
-		EcoFriendlyAmenity ecoWellnessPrograms = new EcoFriendlyAmenity(EcoAmenity.EcoWellnessPrograms);
-		EcoFriendlyAmenity nonToxicCleaningProducts = new EcoFriendlyAmenity(EcoAmenity.NonToxicCleaningProducts);
-		EcoFriendlyAmenity promotionOfLocalProducts = new EcoFriendlyAmenity(EcoAmenity.PromotionOfLocalProducts);
-		EcoFriendlyAmenity culturalActivitiesAndWorkshops = new EcoFriendlyAmenity(EcoAmenity.CulturalActivitiesAndWorkshops);
-		EcoFriendlyAmenity ecoTourismActivitiesWithLocalCommunities = new EcoFriendlyAmenity(EcoAmenity.EcoTourismActivitiesWithLocalCommunities);
 
-		List<String> availability1 = Arrays.asList("01/15/2024", "01/16/2024","01/17/2024", "01/18/2024","01/19/2024", "01/20/2024","01/21/2024", "01/22/2024", "01/23/2024","01/24/2024", "01/25/2024", "01/26/2024");
-		List<String> availability2 = Arrays.asList("01/24/2024", "01/25/2024", "01/26/2024","01/27/2024", "01/28/2024", "01/29/2024");
-		List<String> availability3 = Arrays.asList("01/25/2024", "01/26/2024","01/27/2024", "01/28/2024","01/29/2024", "01/30/2024");
-		List<String> availability4 = Arrays.asList("01/26/2024", "01/27/2024");
-		List<String> availability5 = Arrays.asList("01/15/2024", "01/16/2024","01/17/2024", "01/18/2024","01/19/2024", "01/20/2024");
-		List<String> availability6 = Arrays.asList("01/25/2024", "01/26/2024","01/27/2024", "01/28/2024","01/29/2024", "01/30/2024");
+		List<String> availability1 = Arrays.asList("07/15/2024", "07/16/2024","07/17/2024", "07/18/2024","07/19/2024", "07/20/2024","07/21/2024", "07/22/2024", "07/23/2024","07/24/2024", "07/25/2024", "07/26/2024");
+		List<String> availability2 = Arrays.asList("07/24/2024", "07/25/2024", "07/26/2024","07/27/2024", "07/28/2024", "07/29/2024"); //24-26, 3
+		List<String> availability3 = Arrays.asList("07/25/2024", "07/26/2024","07/27/2024", "07/28/2024","07/29/2024", "07/30/2024");
+		List<String> availability4 = Arrays.asList("07/26/2024", "07/27/2024");
+		List<String> availability5 = Arrays.asList("07/15/2024", "07/16/2024","07/17/2024", "07/18/2024","07/19/2024", "07/20/2024");
+		List<String> availability6 = Arrays.asList("07/25/2024", "07/26/2024","07/27/2024", "07/28/2024","07/29/2024", "07/30/2024");
 
-		Accommodation a1 = new Accommodation("Apartman Slavica 1", "Comfortable apartment located in a quiet part of the city.", "Bulevar Kralja Petra 1, Novi Sad", AccommodationType.ROOM, true, true, false, true, availability1, Payment.PerPerson, 50, BookingMethod.AUTOMATIC, 2, 5, AccommodationRequestStatus.ACCEPTED, Long.parseLong("4"), 10, 5, "image1");
-		Accommodation a3 = new Accommodation("Apartman Slavica 3", "Comfortable apartment located in a quiet part of the city.", "Bulevar Kralja Petra 1, Novi Sad", AccommodationType.ROOM, true, true, false, true, availability2, Payment.PerPerson, 200, BookingMethod.NON_AUTOMATIC, 2, 5, AccommodationRequestStatus.ACCEPTED, Long.parseLong("4"), 10, 5, "image3");
-		Accommodation a2 = new Accommodation("Apartman Slavica 2", "Comfortable apartment located in a quiet part of the city.", "Bulevar Kralja Petra 1, Beograd", AccommodationType.ROOM, true, true, true, false, availability3, Payment.PerAccommodation, 150, BookingMethod.AUTOMATIC, 4, 6, AccommodationRequestStatus.ACCEPTED, Long.parseLong("4"), 20, 7, "image2");
-		Accommodation a4 = new Accommodation("Apartman Slavica 4", "Comfortable apartment located in a quiet part of the city.", "Bulevar Kralja Petra 1, Beograd", AccommodationType.ROOM, true, true, true, false, availability4, Payment.PerAccommodation, 100, BookingMethod.AUTOMATIC, 4, 8, AccommodationRequestStatus.ACCEPTED, Long.parseLong("4"), 50, 7, "image1");
-		Accommodation a5 = new Accommodation("Studio 11", "Spacious studio located in city center.", "Jevrejska 14, Novi Sad", AccommodationType.STUDIO, true, false, true, true, availability5, Payment.PerPerson, 200, BookingMethod.NON_AUTOMATIC, 2, 3, AccommodationRequestStatus.PENDING, Long.parseLong("4"), 0, 2, "image3");
-		Accommodation a6 = new Accommodation("Studio 12", "Spacious studio located in city center.", "Jevrejska 15, Novi Sad", AccommodationType.STUDIO, true, false, true, true, availability6, Payment.PerPerson, 150, BookingMethod.NON_AUTOMATIC, 2, 3, AccommodationRequestStatus.ACCEPTED, Long.parseLong("4"), 5, 2, "image2");
+		Accommodation a1 = new Accommodation("Hotel Centar 1", "Comfortable apartment located in a quiet part of the city.", "Uspenska 1, Novi Sad", AccommodationType.ROOM, true, true, false, true, availability1, Payment.PerPerson, 150, BookingMethod.AUTOMATIC, 2, 5, AccommodationRequestStatus.ACCEPTED, Long.parseLong("3"), 10, 5, "image1;image2;image3");
+		Accommodation a3 = new Accommodation("Hotel Centar 2", "Comfortable apartment located in a quiet part of the city.", "Uspenska 15, Novi Sad", AccommodationType.ROOM, true, true, false, true, availability2, Payment.PerPerson, 200, BookingMethod.NON_AUTOMATIC, 2, 3, AccommodationRequestStatus.ACCEPTED, Long.parseLong("3"), 10, 5, "image3;image2");
+		Accommodation a2 = new Accommodation("Hotel Moskva 1", "Comfortable apartment located in city center.", "Balkanska 1, Beograd", AccommodationType.ROOM, true, true, true, false, availability3, Payment.PerAccommodation, 250, BookingMethod.AUTOMATIC, 4, 6, AccommodationRequestStatus.ACCEPTED, Long.parseLong("3"), 20, 7, "image2");
+		Accommodation a4 = new Accommodation("Hotel Moskva 2", "Comfortable apartment located in city center.", "Balkanska 1, Beograd", AccommodationType.ROOM, true, true, true, false, availability4, Payment.PerAccommodation, 235, BookingMethod.AUTOMATIC, 4, 8, AccommodationRequestStatus.ACCEPTED, Long.parseLong("3"), 50, 7, "image1");
+		Accommodation a5 = new Accommodation("Studio 11", "Spacious studio located in city center.", "Jevrejska 14, Novi Sad", AccommodationType.STUDIO, true, false, true, true, availability5, Payment.PerPerson, 200, BookingMethod.NON_AUTOMATIC, 2, 3, AccommodationRequestStatus.PENDING, Long.parseLong("3"), 0, 2, "image3");
+		Accommodation a6 = new Accommodation("Studio 12", "Spacious studio located in city center.", "Jevrejska 15, Novi Sad", AccommodationType.STUDIO, true, false, true, true, availability6, Payment.PerPerson, 150, BookingMethod.NON_AUTOMATIC, 2, 3, AccommodationRequestStatus.ACCEPTED, Long.parseLong("3"), 5, 2, "image2");
 
 		a1.getEcoFriendlyAmenities().add(solarPanels);
-		a1.getEcoFriendlyAmenities().add(ecoWellnessPrograms);
-		a1.getEcoFriendlyAmenities().add(windTurbines);
+		a1.getEcoFriendlyAmenities().add(waterSavingFaucetsShowersToilets);
+		a1.getEcoFriendlyAmenities().add(recyclingBins);
 		a1.getEcoFriendlyAmenities().add(freeBicyclesForGuests);
-		a1.getEcoFriendlyAmenities().add(preservationOfNaturalHabitats);
 
-		a1.setRate(2.3);
-		a2.setRate(2.8);
+        a2.getEcoFriendlyAmenities().add(electricVehicleChargers);
+        a2.getEcoFriendlyAmenities().add(naturalNonToxicMaterials);
+
+        a3.getEcoFriendlyAmenities().add(limitedUseOfSingleUsePlastics);
+		a3.getEcoFriendlyAmenities().add(energyEfficientDevices);
+
+        a4.getEcoFriendlyAmenities().add(smartThermostats);
+        a4.getEcoFriendlyAmenities().add(greenSpacesAndGardens);
+        a4.getEcoFriendlyAmenities().add(zeroWastePolicy);
+
+		a1.setRate(4.3);
+		a2.setRate(3.8);
 		a3.setRate(4.7);
 		a4.setRate(5.0);
-		a5.setRate(2.3);
+		a5.setRate(3.3);
+        a6.setRate(4.9);
 		accommodationRepository.save(a1);
 		accommodationRepository.save(a2);
 		accommodationRepository.save(a3);
@@ -103,37 +95,31 @@ public class JpaExampleApplication {
 		accommodationRepository.save(a5);
 		accommodationRepository.save(a6);
 
-		Rating r1 = new Rating(2.3,  RatingStatus.ACCEPTED, 1);
-		Rating r2 = new Rating(2.8,  RatingStatus.ACCEPTED, 2);
+		Rating r1 = new Rating(4.3,  RatingStatus.ACCEPTED, 1);
+		Rating r2 = new Rating(3.8,  RatingStatus.ACCEPTED, 2);
 		Rating r3 = new Rating(4.7,  RatingStatus.ACCEPTED, 3);
-		Rating r4 = new Rating(5.0,  RatingStatus.ACCEPTED, 6);
-//		Rating r2 = new Rating(5, "Great apartment", RatingStatus.ACCEPTED, RatingType.ACCOMMODATION, 1, 2,"01/13/2024");
-//		Rating r3 = new Rating(4, "Comfortable apartment", RatingStatus.PENDING, RatingType.ACCOMMODATION, 1, 2,"01/14/2024");
-//		Rating r4 = new Rating(2, null, RatingStatus.PENDING,RatingType.ACCOMMODATION, 1, 2,"01/15/2024");
-//		Rating r5 = new Rating(5, "Great", RatingStatus.ACCEPTED,RatingType.HOST, 1, 3,"01/15/2024");
-
+        Rating r4 = new Rating(5.0,  RatingStatus.ACCEPTED, 4);
+        Rating r5 = new Rating(3.3,  RatingStatus.ACCEPTED, 5);
+		Rating r6 = new Rating(4.9,  RatingStatus.ACCEPTED, 6);
 		ratingRepository.save(r1);
 		ratingRepository.save(r2);
 		ratingRepository.save(r3);
 		ratingRepository.save(r4);
-//		ratingRepository.save(r5);
+		ratingRepository.save(r5);
+		ratingRepository.save(r6);
 
-		Report rr1 = new Report(2, null, null);
-		Report rr2 = new Report(null, 4, null);
-		Report rr3 = new Report(null, null, 2);
-//		reportRepository.save(rr1);
-//		reportRepository.save(rr2);
-//		reportRepository.save(rr3);
 
-		Reservation reservation1 = new Reservation(1L, "07/16/2024","07/17/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 50);
-		Reservation reservation2 = new Reservation(1L, "08/18/2024","08/18/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 15000);
-		Reservation reservation3 = new Reservation(1L, "01/20/2024","01/24/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 15000);
-		Reservation reservation4 = new Reservation(2L, "01/24/2024","01/26/2024", ReservationRequestStatus.PENDING, Long.valueOf(2), 1000);
-		Reservation reservation5 = new Reservation(2L, "01/23/2024","01/24/2024", ReservationRequestStatus.PENDING, Long.valueOf(2), 10000);
-		Reservation reservation6 = new Reservation(2L, "01/27/2024","01/29/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 15000);
-		Reservation reservation7 = new Reservation(2L, "01/27/2024","01/29/2024", ReservationRequestStatus.REJECTED, Long.valueOf(2), 15000);
-		Reservation reservation8 = new Reservation(1L, "01/19/2024","01/19/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 5000);
-		Reservation reservation9 = new Reservation(3L, "01/19/2024","01/19/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 6000);
+		Reservation reservation1 = new Reservation(1L, "07/16/2024","07/17/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 150);
+		Reservation reservation2 = new Reservation(1L, "07/18/2024","07/20/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 300);
+		Reservation reservation3 = new Reservation(3L, "07/27/2024","07/31/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 350);
+		Reservation reservation4 = new Reservation(2L, "08/04/2024","08/11/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 200);
+		Reservation reservation5 = new Reservation(4L, "06/05/2024","06/06/2024", ReservationRequestStatus.REJECTED, Long.valueOf(4), 200);
+		Reservation reservation6 = new Reservation(4L, "03/27/2024","03/29/2024", ReservationRequestStatus.REJECTED, Long.valueOf(4), 200);
+		Reservation reservation7 = new Reservation(4L, "03/06/2024","03/09/2024", ReservationRequestStatus.REJECTED, Long.valueOf(4), 200);
+		Reservation reservation8 = new Reservation(4L, "02/19/2024","02/29/2024", ReservationRequestStatus.REJECTED, Long.valueOf(4), 500);
+		Reservation reservation9 = new Reservation(4L, "01/19/2024","01/19/2024", ReservationRequestStatus.REJECTED, Long.valueOf(4), 600);
+        Reservation reservation10 = new Reservation(3L, "08/01/2024","08/03/2024", ReservationRequestStatus.REJECTED, Long.valueOf(2), 100);
+		Reservation reservation11 = new Reservation(3L, "07/11/2024","07/16/2024", ReservationRequestStatus.ACCEPTED, Long.valueOf(2), 250);
 		reservationRepository.save(reservation1);
 		reservationRepository.save(reservation2);
 		reservationRepository.save(reservation3);
@@ -143,5 +129,7 @@ public class JpaExampleApplication {
 		reservationRepository.save(reservation7);
 		reservationRepository.save(reservation8);
 		reservationRepository.save(reservation9);
+        reservationRepository.save(reservation10);
+		reservationRepository.save(reservation11);
 	}
 }

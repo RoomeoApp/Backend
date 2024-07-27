@@ -12,4 +12,5 @@ public interface IGuestService {
 
     void add(Guest guest);
 
+    Guest updateGuest(Long id, Guest updatedGuest);
 }

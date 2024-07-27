@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.ftn.informatika.jpa.model.Accommodation;
 import rs.ac.uns.ftn.informatika.jpa.model.Guest;
+import rs.ac.uns.ftn.informatika.jpa.model.Host;
 import rs.ac.uns.ftn.informatika.jpa.model.Rating;
 import rs.ac.uns.ftn.informatika.jpa.model.enums.AccommodationRequestStatus;
 import rs.ac.uns.ftn.informatika.jpa.repository.AccommodationRepository;
@@ -90,6 +91,29 @@ public class AccommodationService implements IAccommodationService {
 //        }
 //    }
 
+
+
+    public Accommodation updateAccommodation(Long id, Accommodation updatedGuest) {
+        Optional<Accommodation> existingGuestOpt = accommodationRepository.findById(id);
+        if (existingGuestOpt.isPresent()) {
+            Accommodation existingGuest = existingGuestOpt.get();
+            existingGuest.setName(updatedGuest.getName());
+            existingGuest.setAirConditioner(updatedGuest.isAirConditioner());
+            existingGuest.setDescription(updatedGuest.getDescription());
+            existingGuest.setLocation(updatedGuest.getLocation());
+            existingGuest.setWifi(updatedGuest.isWifi());
+            existingGuest.setParking(updatedGuest.isParking());
+            existingGuest.setKitchen(updatedGuest.isKitchen());
+            existingGuest.setMinGuest(updatedGuest.getMinGuest());
+            existingGuest.setMaxGuest(updatedGuest.getMaxGuest());
+            existingGuest.setEcoFriendlyAmenities(updatedGuest.getEcoFriendlyAmenities());
+            existingGuest.setPrice(updatedGuest.getPrice());
+
+            return accommodationRepository.save(existingGuest);
+        }
+        return updatedGuest;
+    }
+
     @Override
     public Accommodation saveAccommodation(Accommodation accommodation) {
         return accommodationRepository.save(accommodation);
@@ -143,5 +167,8 @@ public class AccommodationService implements IAccommodationService {
                         (endDate == null || endDate.isEmpty() || accommodation.getAvailability().contains(endDate)))
                 .collect(Collectors.toList());
     }
+
+
+
 
 }

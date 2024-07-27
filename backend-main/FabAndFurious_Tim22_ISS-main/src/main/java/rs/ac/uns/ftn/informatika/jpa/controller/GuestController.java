@@ -49,4 +49,14 @@ public class GuestController {
         return ResponseEntity.ok(guest);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Guest> updateGuest(@PathVariable Long id, @RequestBody Guest updatedGuest) {
+        try {
+            Guest guest = guestService.updateGuest(id, updatedGuest);
+            return ResponseEntity.ok(guest);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 }

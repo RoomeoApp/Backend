@@ -12,4 +12,5 @@ public interface IHostService {
 
     void add(Host host);
 
+    Host updateHost(Long id, Host updatedGuest);
 }
